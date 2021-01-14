@@ -1,8 +1,6 @@
 package cl.csantam.controller;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -76,15 +74,11 @@ public class HomeController {
 	private String Busqueda(ModelMap mapa, 
 			@ModelAttribute FormDto frmDto) throws ParseException {
 		
-		final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
-		
 		Integer store_id = frmDto.getStore();
 		Integer estado   = frmDto.getEstado();
 		String  fechaDesde = frmDto.getFechaDesde();
 		String  fechaHasta = frmDto.getFechaHasta();
 		
-		
-
 				
 		logger.info("store:" + store_id);
 		logger.info("estado:" + estado);
