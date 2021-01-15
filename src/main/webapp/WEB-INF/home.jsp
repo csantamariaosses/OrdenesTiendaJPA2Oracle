@@ -148,7 +148,10 @@ function validar() {
 
    if( store != "0" && estado != "0" && fechaDesde !="0" && fechaHasta != "0" ) {
        document.getElementById("frm").submit();
-	   }
+    } else {
+        alert("Debe selecciionar todos los datos..!");
+
+    }
 	
 }
 

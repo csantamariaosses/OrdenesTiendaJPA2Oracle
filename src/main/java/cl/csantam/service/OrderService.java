@@ -49,6 +49,7 @@ public class OrderService {
 	}
 	
 	public List<Order> findByStoreAndEstado( Integer store_id, Integer estado) {
+		System.out.println("Order Service-----------");
 		Store store_ = storeDao.findById( store_id ).orElse(null);
 		Estado estado_ = estadoDao.findById( estado ).orElse(null);
 		return orderDao.findByStoreAndEstado(store_, estado_);
