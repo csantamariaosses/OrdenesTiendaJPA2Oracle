@@ -63,7 +63,6 @@ public class OrderService {
 		Date date1 = new SimpleDateFormat("dd/MM/yy").parse(ddMMyy_desde);
 		Date date2 = new SimpleDateFormat("dd/MM/yy").parse(ddMMyy_hasta);
 		
-//		logger.info("Fecha Formateada:" + sdf.parse(ddMMyy));
 		return orderDao.findByOrderDateBetween( date1 , date2 );
 	}
 	
@@ -73,11 +72,13 @@ public class OrderService {
 		
 		String ddMMyy_desde = fechaDesde.substring(8, 10)+'/'+fechaDesde.substring(5, 7)+'/'+fechaDesde.substring(2, 4);
 		String ddMMyy_hasta = fechaHasta.substring(8, 10)+'/'+fechaHasta.substring(5, 7)+'/'+fechaHasta.substring(2, 4);
+		System.out.println(  ddMMyy_desde );
+		System.out.println( ddMMyy_hasta );
 		
 		Date date1 = new SimpleDateFormat("dd/MM/yy").parse(ddMMyy_desde);
 		Date date2 = new SimpleDateFormat("dd/MM/yy").parse(ddMMyy_hasta);
 		
-		return orderDao.findByStoreAndEstadoAndOrderDateBetween(store_, estado_, date1, date2);
+		return orderDao.findByStoreAndEstadoAndOrderDateBetween(store_, estado_, date1, date2 );
 		
 	}
 }
