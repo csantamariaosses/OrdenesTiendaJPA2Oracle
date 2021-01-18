@@ -29,6 +29,7 @@ public class OrdersRestController {
 		return ResponseEntity.ok( orders );		
 	}
 	
+	// Busqueda por store, estado, fechaDesde, fechaHasta
 	@GetMapping( path = "/{store_id}/{estado}/{fechaDesde}/{fechaHasta}")
 	public ResponseEntity<List<Order>> getOrdersByStoreAndEstadoAndOrderDate(
 			@PathVariable Integer store_id, 
@@ -49,6 +50,7 @@ public class OrdersRestController {
 	}
 	
 	
+	// Busqueda por Estado 
 	@GetMapping( path = "/estados/{store_id}/{estado}")
 	public ResponseEntity<List<Order>> getOrdersByStoreAndEstado(
 			@PathVariable Integer store_id, 
@@ -66,6 +68,8 @@ public class OrdersRestController {
 		}	
 	}
 	
+	
+	// Busqueda por store
 	@GetMapping( path = "/{store_id}")
 	public ResponseEntity<List<Order>> getOrdersByStore(
 			@PathVariable Integer store_id
@@ -81,7 +85,7 @@ public class OrdersRestController {
 		}	
 	}
 
-	
+	// Busqueda por rango de fechas
 	@GetMapping( path = "/fechas//{fechaDesde}/{fechaHasta}")
 	public ResponseEntity<List<Order>> getOrdersByFechas(
 			@PathVariable String  fechaDesde,
