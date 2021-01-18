@@ -29,9 +29,6 @@ import lombok.ToString;
 @Table( name = "orders" ) 
 public class Order implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 
@@ -51,7 +48,7 @@ public class Order implements Serializable {
     private Estado estado;
 	
 	@Column(name = "ORDER_DATE")
-    Date orderDate;
+    private Date orderDate;
 	
 	private String  required_date;
 	private String  shipped_date;
